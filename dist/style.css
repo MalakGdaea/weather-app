@@ -1,0 +1,41 @@
+body {
+  background-color: #19a7ce;
+  color: aliceblue;
+}
+#temperature {
+  font-size: 2rem;
+}
+#cityInput {
+  color: aliceblue;
+  font-size: 2.5rem;
+}
+#cityInput:focus {
+  border-bottom: 1px solid aliceblue;
+  box-shadow: 0 1px 0 0 aliceblue;
+}
+.degree-container {
+  position: relative;
+}
+.degree-container .fa-circle {
+  position: absolute;
+  top: 0;
+}
+.weather-card {
+  padding-top: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.material-icons:hover {
+  cursor: pointer;
+}
+.delete {
+  color: #df2e38;
+}
+.save {
+  color: #58cf58;
+}
+.condition {
+  font-size: 1.5rem;
+}
+.city-name {
+  font-size: 1.5rem;
+}
