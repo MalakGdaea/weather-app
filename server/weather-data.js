@@ -20,4 +20,11 @@ const getSpcificFeilds = function (weatherData, cityName, units) {
   };
 };
 
-module.exports = { getWeatherData };
+const GeograficalCoordinatesToCity = function (lat, lon) {
+  const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${APIKEY}`;
+  return axios.get(url).then((result) => {
+    return result.data[0].name;
+  });
+};
+
+module.exports = { getWeatherData, GeograficalCoordinatesToCity };

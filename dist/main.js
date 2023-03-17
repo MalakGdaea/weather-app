@@ -8,14 +8,14 @@ const displaySavedWeather = async function () {
 
 displaySavedWeather();
 
-const displaySearchCityWeather = async function (cityName) {
+const displayCityWeather = async function (cityName) {
   let citiesWeather = await weather.getCityWeather(cityName);
   render.renderCitiesWeather(citiesWeather);
 };
 
 $("#search").on("click", function () {
   let city = $("#cityInput").val();
-  displaySearchCityWeather(city);
+  displayCityWeather(city);
   $("#cityInput").val("");
 });
 
@@ -32,3 +32,21 @@ $("#weatherData").on("click", ".delete", async function () {
   let citiesWeather = weather.deleteCityWeather(cityId);
   render.renderCitiesWeather(citiesWeather);
 });
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  $.get(
+    `/cityName/?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+  ).then((cityName) => {
+    displayCityWeather(cityName);
+  });
+}
+
+getLocation();

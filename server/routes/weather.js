@@ -55,4 +55,14 @@ router.delete("/weather", async function (req, res) {
   }
 });
 
+router.get("/cityName", function (req, res) {
+  let latitude = Number(req.query.lat);
+  let longitude = Number(req.query.lon);
+  weatherData
+    .GeograficalCoordinatesToCity(latitude, longitude)
+    .then((cityName) => {
+      res.send(cityName);
+    });
+});
+
 module.exports = router;
