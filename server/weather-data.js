@@ -4,13 +4,13 @@ let url = `https://api.openweathermap.org/data/2.5/weather?appid=${APIKEY}`;
 let iconStartLink = "https://openweathermap.org/img/wn/";
 
 const getWeatherData = function (cityName, units = "metric") {
-  url = url + `&q=${cityName}&units=${units}`;
-  return axios.get(url).then((response) => {
-    return getSpcificFeilds(response.data, cityName, units);
+  let fullUrl = url + `&q=${cityName}&units=${units}`;
+  return axios.get(fullUrl).then((response) => {
+    return getSpcificFeilds(response.data, cityName);
   });
 };
 
-const getSpcificFeilds = function (weatherData, cityName, units) {
+const getSpcificFeilds = function (weatherData, cityName) {
   let icon = iconStartLink + weatherData.weather[0].icon + "@2x.png";
   return {
     name: cityName,

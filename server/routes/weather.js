@@ -65,4 +65,23 @@ router.get("/cityName", function (req, res) {
     });
 });
 
+router.put("/weather/:cityName", function (req, res) {
+  weatherData.getWeatherData(req.params.cityName).then((weatherResult) => {
+    try {
+      Weather.findOneAndUpdate(
+        { name: weatherResult.name },
+        {
+          temperature: weatherResult.temperature,
+          condition: weatherResult.condition,
+          conditionPic: weatherResult.conditionPic,
+        }
+      ).then(() => {
+        res.send({ message: `city weather updated successfully.` });
+      });
+    } catch (error) {
+      res.send(error);
+    }
+  });
+});
+
 module.exports = router;

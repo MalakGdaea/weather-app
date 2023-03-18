@@ -50,3 +50,9 @@ function showPosition(position) {
 }
 
 getLocation();
+
+$("#weatherData").on("click", ".refresh", async function () {
+  let cityId = $(this).closest(".row").data().id;
+  let citiesWeather = await weather.updateCityWeather(cityId);
+  render.renderCitiesWeather(citiesWeather);
+});

@@ -61,10 +61,30 @@ const Weather = function () {
     });
   };
 
+  const updateCityWeather = function (cityID) {
+    let cityName = citiesWeather[cityID].name;
+    if (citiesWeather[cityID].saved) {
+      $.ajax({
+        url: `/weather/${cityName}`,
+        type: "PUT",
+        success: function (response) {
+          console.log(response.message);
+        },
+      });
+    }
+    return $.get(`/weather/${cityName}`).then((currentCityWeather) => {
+      citiesWeather[cityID].temperature = currentCityWeather.temperature;
+      citiesWeather[cityID].condition = currentCityWeather.condition;
+      citiesWeather[cityID].conditionPic = currentCityWeather.conditionPic;
+      return citiesWeather;
+    });
+  };
+
   return {
     getCitiesData,
     getCityWeather,
     changeCityToSaved,
     deleteCityWeather,
+    updateCityWeather,
   };
 };
