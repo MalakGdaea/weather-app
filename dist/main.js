@@ -1,4 +1,3 @@
-const $ = require('jquery');
 const weather = Weather();
 const render = new Render();
 
