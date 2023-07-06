@@ -1,3 +1,4 @@
+import $ from 'jquery';
 const weather = Weather();
 const render = new Render();
 
