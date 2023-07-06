@@ -1,6 +1,6 @@
 const axios = require("axios");
-const APIKEY = "2fca1c618cd5e124997e6a902b3cd444";
-let url = `https://api.openweathermap.org/data/2.5/weather?appid=${APIKEY}`;
+let apiKey = process.env.APIKEY;
+let url = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}`;
 let iconStartLink = "https://openweathermap.org/img/wn/";
 
 const getWeatherData = function (cityName, units = "metric") {
