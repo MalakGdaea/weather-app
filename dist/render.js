@@ -1,3 +1,4 @@
+import $ from 'jquery';
 class Render {
   constructor() {
     this.source = $("#weatherScript").html();
