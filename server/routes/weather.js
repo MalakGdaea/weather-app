@@ -1,7 +1,8 @@
 const express = require("express");
+require('dotenv').config();
 const router = express.Router();
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/weatherDB");
+mongoose.connect(process.env.DB);
 const weatherData = require("../weather-data");
 const Weather = require("../models/Weather");
 
