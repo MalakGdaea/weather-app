@@ -1,4 +1,3 @@
-const $ = require('jquery');
 const Weather = function () {
   const citiesWeather = [];
   let idCounter = 0;
