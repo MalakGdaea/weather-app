@@ -1,4 +1,4 @@
-const $ = require('jquery');
+
 class Render {
   constructor() {
     this.source = $("#weatherScript").html();
