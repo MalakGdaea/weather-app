@@ -14,12 +14,12 @@ NodeJS, Express, MongoDB.
 ## How to Run the Project
 1. Install MongoDB  
     Before running the project, ensure that MongoDB is installed and running on your machine. Follow the steps below to install MongoDB:
-    *Download MongoDB: Visit the [MongoDB Download Center ](https://www.mongodb.com/try/download/community) and download the MongoDB Community Server.
-    *Install MongoDB: Follow the installation instructions for your operating system:
+    * Download MongoDB: Visit the [MongoDB Download Center ](https://www.mongodb.com/try/download/community) and download the MongoDB Community Server.
+    * Install MongoDB: Follow the installation instructions for your operating system:
       * [Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)
       * [macOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
       * [Linux](https://www.mongodb.com/docs/manual/administration/install-on-linux/)
-    After installation, ensure that MongoDB is running by starting the MongoDB service or by using the following command:
+After installation, ensure that MongoDB is running by starting the MongoDB service or by using the following command:
     ```bash
     mongod
     ```
