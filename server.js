@@ -10,8 +10,7 @@ app.use(express.static(path.join(__dirname, "node_modules")));
 
 
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log(`Running server on port ${port}`);
 });
-    

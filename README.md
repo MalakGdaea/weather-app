@@ -21,7 +21,7 @@ NodeJS, Express, MongoDB.
       * [Linux](https://www.mongodb.com/docs/manual/administration/install-on-linux/)
 After installation, ensure that MongoDB is running by starting the MongoDB service or by using the following command:
     ```bash
-    mongod
+    mongosh
     ```
 2. Clone the repository
    ```bash

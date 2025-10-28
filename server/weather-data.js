@@ -1,5 +1,5 @@
 const axios = require("axios");
-let apiKey = process.env.APIKEY;
+let apiKey = process.env.OPENWEATHER_API_KEY;
 let url = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}`;
 let iconStartLink = "https://openweathermap.org/img/wn/";
 
@@ -21,7 +21,7 @@ const getSpcificFeilds = function (weatherData, cityName) {
 };
 
 const GeograficalCoordinatesToCity = function (lat, lon) {
-  const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${APIKEY}`;
+  const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}`;
   return axios.get(url).then((result) => {
     return result.data[0].name;
   });

@@ -2,7 +2,7 @@ const express = require("express");
 require('dotenv').config();
 const router = express.Router();
 const mongoose = require("mongoose");
-mongoose.connect(process.env.DB);
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost:27017/weatherDB');
 const weatherData = require("../weather-data");
 const Weather = require("../models/Weather");
 
